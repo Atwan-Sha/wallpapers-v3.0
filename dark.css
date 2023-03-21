@@ -1,0 +1,97 @@
+body {
+    width: 1000px;
+    height: 100vh;
+    padding: 0;
+    margin: 0 auto;
+    background-color: rgb(40,44,51);
+}
+
+.pic {
+    border-radius: 50px 0 50px 0;
+    width: 350px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px black;
+    box-sizing: border-box;
+    transition: all 0.4s;
+}
+
+.flex-box-group {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    margin-top: 25px;
+    justify-content: center;
+
+}
+
+.pic:hover {
+    transition: all 0.4s;
+    transform: scale(1.05);
+}
+
+.flex-box-main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.styleCatalog {
+    width: 400px;
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+header {
+    display: flex;
+    margin-top: 15px;
+}
+
+.knopki {
+    width: 100px;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 5px;
+    border: 1px solid white;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.knopki:hover {
+    transition: all 0.5s;
+    background-color: blueviolet;
+}
+
+.bodyWhite {
+    background-color: white;
+
+}
+
+.title {
+    font-size: 25px;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.describe {
+    width: 350px;
+    height: 30px;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 30px;
+    font-style: italic;
+}
+
