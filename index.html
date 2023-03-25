@@ -12,39 +12,48 @@
     <div class='knopki' onclick="renderCatalog()">
         Catalog
     </div>
-    <div class='knopki' onclick="clearPage()">
-        Clear
-    </div>
-    <div class="knopki" onclick="toggleTheme()">Theme</div>
 </header>
 
 <body>
-   <main class="flex-box-main">
+    <main class="flex-box-main">
 
-   </main>
+    </main>
+
+    <footer class="footer">
+        <div class="bot">Copyright 2022 | Wallpapers Mark Taratynov</div>
+    </footer>
 
     <template id="tmpl-catalog">
             <div class="flex-box-group">
                 <div class="title">
-                    ${title}
+
                 </div>
-                <div>
+                <div style="overflow: hidden;">
                     <img onclick="renderImage(${id})" class="pic" id="picure_${id}" src="${img}">
                 </div>
                 <div class="describe">
-                    ${describe}
+
                 </div>
             </div>
     </template>
 
     <template id="tmpl-card">
-        <div class="styleCatalog">
-            <div>
-                <img class="pic" id="picure_${id}" src="${img}">
+        <div class="singleCard">
+            <img class="largePic" id="picure_${id}" src="${img}">
+            <button id="open" class="info">More info</button>
+
+            <div class="modal-container" id="modal_container">
+                <div class="modal">
+                    <h1>Modals are</h1>
+                    <p>lorem80</p>
+                    <button id="close">
+                        Close Me
+                    </button>
+                </div>
             </div>
         </div>
     </template>
     
-<script src="second.js"></script>
+<script src="second.js" defer></script>
 </body>
 </html>

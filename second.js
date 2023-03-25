@@ -56,13 +56,24 @@ const wallpapers = [
 ];
 
 //находим коробку под карточки
-let main = document.querySelector('main');
+const main = document.querySelector('main');
 
 //получаем текст шаблона каталога
-let templateCatalog = document.getElementById('tmpl-catalog').innerHTML;
+const templateCatalog = document.getElementById('tmpl-catalog').innerHTML;
 
 //получаем текст шаблона карточки
-let templateCard = document.getElementById('tmpl-card').innerHTML;
+const templateCard = document.getElementById('tmpl-card').innerHTML;
+
+
+
+//получаем окно модального окна more info
+let modalContainer = document.getElementById('modal_container');
+
+//получаем кнопку закрыть модальное окно
+let close = document.getElementById('close');
+
+//получаем кнопку more info после нажатия на картинку
+let open = document.getElementById('open');
 
 //вызываем функцию при загрузке страницы
 renderCatalog();
@@ -70,10 +81,12 @@ renderCatalog();
 //создаем функцию по отрисовке каталога блоков карточек (показаны только первые картинки в массиве)
 function renderCatalog() {
 
+    clearPage();
+
     //рисуем данные на экран
     for (let i = 0; i < wallpapers.length; i++ ) {
 
-        
+        //подставляем в шаблон данные, заменяем, и рендерим все картинки
         main.innerHTML += templateCatalog.replace('${img}', wallpapers[i])
                                          .replace('${id}', i+1);
     }
@@ -81,15 +94,27 @@ function renderCatalog() {
 
 
 function renderImage(id) {
-
+    //очищаем страницу
     clearPage();
-
-    main.innerHTML += templateCard.replace('${img}', wallpapers[id-1]);
+    //подставляем в шаблон данные, заменяем и рендерим
+    main.innerHTML += templateCard.replace('${img}', wallpapers[id - 1]);
 }
 
 //функция очистки страницы
 function clearPage() {
+
+    //заменяем шаблон на пустоту
     main.innerHTML = '';
 
 };
 
+
+
+// open.addEventListener('click', () => {
+//     modalContainer.classList.add('show');
+// });
+
+// close.addEventListener('click', () => {
+//     modalContainer.classList.remove('show');
+// });
+// Не работает при клике на кнопку more info, не отображает кнопку в DOM
