@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="dark.css">
     <title>Document</title>
 </head>
+
 <header>
     <div class='knopki' onclick="renderCatalog()">
         Catalog
@@ -14,8 +15,9 @@
     <div class='knopki' onclick="clearPage()">
         Clear
     </div>
-    <div class="theme" onclick="toggleTheme()">Theme</div>
+    <div class="knopki" onclick="toggleTheme()">Theme</div>
 </header>
+
 <body>
    <main class="flex-box-main">
 
@@ -27,7 +29,7 @@
                     ${title}
                 </div>
                 <div>
-                    <img onclick="renderGroup(${id})" class="pic" src="${img}">
+                    <img onclick="renderImage(${id})" class="pic" id="picure_${id}" src="${img}">
                 </div>
                 <div class="describe">
                     ${describe}
@@ -35,25 +37,14 @@
             </div>
     </template>
 
-    <template id="tmpl-block">
-        <div class="styleCatalog">
-            <div>
-                <img onclick="renderCard()" class="pic" src="${firstImg}" alt="">
-            </div>
-        </div>
-    </template>
-
-
     <template id="tmpl-card">
         <div class="styleCatalog">
             <div>
-                <img class="pic" src="${img}">
+                <img class="pic" id="picure_${id}" src="${img}">
             </div>
         </div>
     </template>
-
-
     
-<script src="script.js"></script>
+<script src="second.js"></script>
 </body>
 </html>
