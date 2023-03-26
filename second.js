@@ -64,17 +64,6 @@ const templateCatalog = document.getElementById('tmpl-catalog').innerHTML;
 //получаем текст шаблона карточки
 const templateCard = document.getElementById('tmpl-card').innerHTML;
 
-
-
-//получаем окно модального окна more info
-let modalContainer = document.getElementById('modal_container');
-
-//получаем кнопку закрыть модальное окно
-let close = document.getElementById('close');
-
-//получаем кнопку more info после нажатия на картинку
-let open = document.getElementById('open');
-
 //вызываем функцию при загрузке страницы
 renderCatalog();
 
@@ -94,10 +83,33 @@ function renderCatalog() {
 
 
 function renderImage(id) {
+
     //очищаем страницу
     clearPage();
+
     //подставляем в шаблон данные, заменяем и рендерим
     main.innerHTML += templateCard.replace('${img}', wallpapers[id - 1]);
+
+    //При попытке обратиться к модалке внутри второго темлейта, нужно создавать переменные и функции внутри самой функции отрисовки ВТОРОГО темплейта;
+
+        //обращаемся к модалке в DOM дереве
+        const modalContainer = document.getElementById('modal_container');
+
+        //обращаемся к кнопке more info в DOM дереве
+        const open = document.getElementById('open');
+
+        //обращаемся к кнопке close в DOM дереве
+        const close = document.getElementById('close');
+
+        //Вешаем addEventListener на кнопку more info
+        open.addEventListener('click', () => {
+            modalContainer.classList.add('show');
+        });
+        
+        //Вешаем addEventListener на кнопку close
+        close.addEventListener('click', () => {
+            modalContainer.classList.remove('show')
+        });
 }
 
 //функция очистки страницы
@@ -106,15 +118,8 @@ function clearPage() {
     //заменяем шаблон на пустоту
     main.innerHTML = '';
 
-};
+}
 
 
 
-// open.addEventListener('click', () => {
-//     modalContainer.classList.add('show');
-// });
 
-// close.addEventListener('click', () => {
-//     modalContainer.classList.remove('show');
-// });
-// Не работает при клике на кнопку more info, не отображает кнопку в DOM
