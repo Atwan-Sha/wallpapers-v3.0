@@ -101,6 +101,12 @@ function renderImage(id) {
         //обращаемся к кнопке close в DOM дереве
         const close = document.getElementById('close');
 
+        //обращаемся к ссылке download в DOM
+        const linkDl = document.getElementById('download');
+
+        //задаем атрибут href и указываем какая именно будет картинка с помощью метода setAttribute
+        linkDl.setAttribute('href', wallpapers[id - 1]);
+
         //Вешаем addEventListener на кнопку more info
         open.addEventListener('click', () => {
             modalContainer.classList.add('show');
@@ -108,8 +114,15 @@ function renderImage(id) {
         
         //Вешаем addEventListener на кнопку close
         close.addEventListener('click', () => {
-            modalContainer.classList.remove('show')
+            modalContainer.classList.remove('show');
         });
+
+        //обращаемся к элементу window (любое место кроме модалки), и вешаем слушатель по клику, и функцию, если место клика    
+        window.addEventListener('click', (event) => {
+            if (event.target == modalContainer) {
+                modalContainer.classList.remove('show');
+            }
+        })
 }
 
 //функция очистки страницы
@@ -119,6 +132,7 @@ function clearPage() {
     main.innerHTML = '';
 
 }
+
 
 
 
