@@ -1,36 +1,36 @@
-// const wallpapers = [
-//     {
-//       id: 1,
-//       title: "Sunset over the ocean",
-//       imageUrl: "https://example.com/wallpapers/sunset-ocean.jpg",
-//       tags: ["sunset", "ocean", "beach"],
-//       resolution: {
-//         width: 1920,
-//         height: 1080,
-//       },
-//     },
-//     {
-//       id: 2,
-//       title: "Mountains in the mist",
-//       imageUrl: "https://example.com/wallpapers/mountains-mist.jpg",
-//       tags: ["mountains", "nature", "landscape"],
-//       resolution: {
-//         width: 2560,
-//         height: 1440,
-//       },
-//     },
-//     {
-//       id: 3,
-//       title: "City skyline at night",
-//       imageUrl: "https://example.com/wallpapers/city-skyline-night.jpg",
-//       tags: ["city", "night", "skyline"],
-//       resolution: {
-//         width: 3840,
-//         height: 2160,
-//       },
-//     },
-//     // и так далее
-//   ];
+const wallpapers_old = [
+    {
+      id: 1,
+      title: "Sunset over the ocean",
+      imageUrl: "https://example.com/wallpapers/sunset-ocean.jpg",
+      tags: ["sunset", "ocean", "beach"],
+      resolution: {
+        width: 1920,
+        height: 1080,
+      },
+    },
+    {
+      id: 2,
+      title: "Mountains in the mist",
+      imageUrl: "https://example.com/wallpapers/mountains-mist.jpg",
+      tags: ["mountains", "nature", "landscape"],
+      resolution: {
+        width: 2560,
+        height: 1440,
+      },
+    },
+    {
+      id: 3,
+      title: "City skyline at night",
+      imageUrl: "https://example.com/wallpapers/city-skyline-night.jpg",
+      tags: ["city", "night", "skyline"],
+      resolution: {
+        width: 3840,
+        height: 2160,
+      },
+    },
+    // и так далее
+  ];
   
 
 let wallpapers = [
